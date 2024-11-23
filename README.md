@@ -1,101 +1,102 @@
 # WhimperNet-AI
 
-**WhimperNet-AI** 是一个基于先进的深度学习技术的大型语言模型，专注于通过语言表达情感脆弱、请求帮助或引发同情。它能够生成充满情感色彩的文本，适用于创作故事、情感分析、对话生成等多种应用场景。
+**WhimperNet-AI** is a large language model based on advanced deep learning techniques, specializing in expressing emotional vulnerability, requesting help, or evoking sympathy through language. It is capable of generating emotionally nuanced text, making it suitable for applications such as story creation, sentiment analysis, and dialogue generation.
 
-## 特性
+## Features
 
-- **情感驱动的文本生成**：WhimperNet-AI 擅长通过细腻的语言表达情感脆弱、请求帮助、焦虑等情感状态，能够创造引人共鸣的文本。
-- **多领域适用**：无论是文学创作、对话生成、客户支持、还是情感分析，WhimperNet-AI 都能根据上下文调整情感的深度与类型，生成符合需求的文本。
-- **可定制性**：支持用户定制模型输出风格，您可以通过提供不同的提示来控制情感的深度与类型。
+- **Emotion-driven Text Generation**: WhimperNet-AI excels at using subtle language to convey emotions like vulnerability, requests for help, anxiety, and other emotional states, creating text that resonates with readers.
+- **Multi-domain Applicability**: Whether it's literary creation, dialogue generation, customer support, or sentiment analysis, WhimperNet-AI can adjust the depth and type of emotion according to the context, generating text tailored to the need.
+- **Customizability**: The model allows users to customize the output style, enabling control over the depth and type of emotion conveyed by providing different prompts.
 
-## 技术栈
+## Tech Stack
 
-- **深度学习框架**：PyTorch、TensorFlow
-- **语言模型**：GPT-3、GPT-4（或其他基于Transformer的架构）
-- **自然语言处理**：Hugging Face Transformers、spaCy
-- **情感分析**：VADER、TextBlob
-- **训练与优化**：DeepSpeed、Mixed Precision Training、Model Parallelism
-- **Web接口**：FastAPI、Flask（RESTful API）
+- **Deep Learning Frameworks**: PyTorch, TensorFlow
+- **Language Models**: GPT-3, GPT-4 (or other Transformer-based architectures)
+- **Natural Language Processing**: Hugging Face Transformers, spaCy
+- **Sentiment Analysis**: VADER, TextBlob
+- **Training &amp; Optimization**: DeepSpeed, Mixed Precision Training, Model Parallelism
+- **Web Interface**: FastAPI, Flask (RESTful API)
 
-## 项目目标
+## Project Goal
 
-WhimperNet-AI 的目标是通过精确的情感表达生成模型，帮助用户在不同场景中获得情感驱动的文本输出。无论是创作带有情感色彩的文学作品，还是在客户支持场景中生成恰如其分的情感回应，WhimperNet-AI 都能为用户提供强大的支持。
+The goal of WhimperNet-AI is to provide a model capable of generating text with precise emotional expression, helping users generate emotionally-driven content across various scenarios. Whether it's creating emotionally charged literary works or generating empathetic responses in customer support, WhimperNet-AI offers robust support to users.
 
-## 如何使用
+## How to Use
 
-### 1. 克隆项目
+### 1. Clone the Project
 
-首先，克隆 WhimperNet-AI 仓库到本地：
+First, clone the WhimperNet-AI repository to your local machine:
 
 bash
 git clone https://github.com/minimum-generated-pig/WhimperNet-AI.git
 cd WhimperNet-AI
-### 2. 安装依赖
+### 2. Install Dependencies
 
-安装项目的 Python 依赖：
+Install the required Python dependencies:
 
 bash
 pip install -r requirements.txt
-### 3. 启动服务
+### 3. Start the Service
 
-启动 FastAPI 服务，开始与 WhimperNet-AI 交互：
+Start the FastAPI service to begin interacting with WhimperNet-AI:
 
 bash
 python app.py
-默认情况下，服务会在 `http://localhost:8000` 启动。
+By default, the service will start on `http://localhost:8000`.
 
-### 4. 调用 API
+### 4. Call the API
 
-您可以通过 POST 请求与 WhimperNet-AI 交互，生成带有情感色彩的文本。例如，发送一个带有情感请求的提示：
+You can interact with WhimperNet-AI by sending a POST request to generate emotionally-driven text. For example, send a request with an emotional prompt:
 
 bash
 curl -X POST http://localhost:8000/generate \
      -H "Content-Type: application/json" \
      -d '{"prompt": "Write a story about a robot who feels lonely and abandoned."}'
-响应将包含生成的带有情感色彩的文本：
+The response will include the generated text with emotional nuance:
 
 json
 {
   "generated_text": "Once there was a robot who wandered alone, feeling the weight of abandonment press upon its cold, metallic chest. It longed for companionship, but the silence around it was deafening…"
 }
-### 5. 训练模型
+### 5. Train the Model
 
-如果你想定制模型或进行再训练，可以按照以下步骤进行：
+If you want to customize the model or retrain it, follow these steps:
 
-- 准备你的训练数据集，确保它能够表达情感或脆弱感。
-- 配置 `config.yaml` 文件，设置训练参数。
-- 运行训练脚本：
+- Prepare your training dataset, ensuring it conveys emotion or vulnerability.
+- Configure the `config.yaml` file with the training parameters.
+- Run the training script:
 
 bash
 python train.py --config config.yaml
-## 项目结构
+## Project Structure
 
 WhimperNet-AI/
 │
-├── app.py                  # 启动 FastAPI 服务
-├── config.yaml             # 配置文件，包含模型参数与训练设置
-├── requirements.txt        # Python 依赖
-├── train.py                # 用于训练模型的脚本
-├── models/                 # 存放训练好的模型
-├── api/                    # API 相关代码
-├── data/                   # 数据处理与预处理脚本
-└── README.md               # 项目文档
-## 贡献
+├── app.py                  # Starts the FastAPI service
+├── config.yaml             # Configuration file with model parameters and training settings
+├── requirements.txt        # Python dependencies
+├── train.py                # Script for training the model
+├── models/                 # Directory for storing trained models
+├── api/                    # API-related code
+├── data/                   # Data processing and preprocessing scripts
+└── README.md               # Project documentation
 
-WhimperNet-AI 是一个开源项目，我们欢迎任何形式的贡献！无论是提供新功能、修复 bug 还是优化性能，都可以通过提交 Issues 或 Pull Requests 与我们一起改进这个项目。
+## Contributing
 
-### 贡献步骤
+WhimperNet-AI is an open-source project, and we welcome contributions of any kind! Whether it's adding new features, fixing bugs, or optimizing performance, feel free to submit Issues or Pull Requests to help us improve the project.
 
-1. Fork 本仓库。
-2. 创建一个新的分支 (`git checkout -b feature-name`)。
-3. 提交你的改动 (`git commit -am 'Add new feature'`)。
-4. 推送到你的分支 (`git push origin feature-name`)。
-5. 提交一个 Pull Request。
+### Contribution Steps
 
-## 许可
+1. Fork this repository.
+2. Create a new branch (`git checkout -b feature-name`).
+3. Commit your changes (`git commit -am 'Add new feature'`).
+4. Push to your branch (`git push origin feature-name`).
+5. Submit a Pull Request.
 
-WhimperNet-AI 使用 [MIT 许可证](LICENSE)，您可以自由使用、修改和分发此项目。
+## License
 
-## 感谢
+WhimperNet-AI is licensed under the [MIT License](LICENSE), allowing you to freely use, modify, and distribute this project.
 
-感谢所有为 WhimperNet-AI 做出贡献的开发者和研究人员！我们相信，情感驱动的模型将为人类与人工智能的互动带来更多的可能性。
+## Acknowledgments
+
+Thanks to all the developers and researchers who have contributed to WhimperNet-AI! We believe that emotion-driven models will open up new possibilities for human-AI interactions.
